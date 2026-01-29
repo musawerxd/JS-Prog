@@ -30,5 +30,4 @@ console.table([accountName, accountEmail, accountPassword, accountCity, accountS
 /* Notes:
 - Prefer let/const, avoid var
 - const = never change, let = can change
-- No accidental globals!
 */
