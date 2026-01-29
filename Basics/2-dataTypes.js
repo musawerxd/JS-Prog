@@ -1,4 +1,8 @@
-// JS Variables Notes 1/29/2026
+
+
+// JS DataType Notes 1/29/2026
+
+
 alert("this will pop up an alert box! in the browser");
 // cant run in node.js environment, only in browser console.
 

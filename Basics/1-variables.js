@@ -1,6 +1,8 @@
 
 
 // JS Variables Notes 1/29/2026
+
+
 "use strict"; ///treatss all code as newer version of JS
 //e.g:
 // anything = 5; 
