@@ -5,7 +5,7 @@
 
 
 
-// JS Arrow Function Notes 07/02/2026
+// JS this Notes 07/02/2026
 
 // this = who called the function
 
