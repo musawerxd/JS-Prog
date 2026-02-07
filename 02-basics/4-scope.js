@@ -1,7 +1,7 @@
 
 
 
-// JS Object Notes 07/02/2026
+// JS scope Notes 07/02/2026
 
 // Scope defines the accessibility or visibility of variables, functions, and objects in a particular part of your code
 
