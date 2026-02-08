@@ -1,4 +1,13 @@
+
+
+
+// JS if , if-else, if-else-if notes 02/08/2026
+
+
+
+
 // 1. Simple if
+console.log(`\n 1. Simple if`)
 // Runs block only when condition is true
 
 let age = 20;
@@ -10,7 +19,13 @@ if (age >= 18) {
 // If condition is false -> nothing happens
 
 
+
+
+
+
 // 2. if – else
+console.log(`\n 2. if - else`)
+
 // Two possible execution paths
 
 let marks = 45;
@@ -25,6 +40,8 @@ if (marks >= 50) {
 
 
 // 3. if – else if – else
+console.log(`\n 3. if - else if - else`)
+
 // Multiple conditions checked in order
 
 let score = 78;
@@ -53,17 +70,22 @@ else {
 
 
 // 4. Without braces (not recommended)
+console.log(`\n 4. Without braces`)
 
-if (age > 18)
-    console.log("Allowed");
+if (age > 18) console.log("Allowed");
+
+// can be multiple
+if (age > 18) console.log("Allowed"), console.log(" i ran!");
+// but it is considered bad code 
+
 
 // Use braces when more than one line
 
 
 // 5. Common mistakes
-
+console.log(`\n 5. Common mistakes`)
 // Mistake: assignment instead of comparison
-// if (age = 18) { }   // WRONG
+// if (age = 18) { console.log("allowed") }   // WRONG
 
 // Correct
 if (age === 18) { }
