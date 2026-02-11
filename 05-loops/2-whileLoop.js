@@ -4,7 +4,7 @@
 
 
 
-//JS for loop notes 02/11/2026
+//JS While loop notes 02/11/2026
 
 
 
