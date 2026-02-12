@@ -6,7 +6,6 @@
 //JS Do While loop notes 02/11/2026
 
 
-// ================= do–while Loop in JavaScript =================
 
 // do–while runs the code AT LEAST once
 // even if condition is false
