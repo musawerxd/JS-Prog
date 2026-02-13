@@ -27,7 +27,15 @@ for (let value of arr) {
 }
 
 
-// ================================================================
+
+
+
+
+
+
+
+
+
 // 2. Strings Example
 console.log(`\n 2. Strings Example`)
 
@@ -45,7 +53,15 @@ for (let char of str) {
 }
 
 
-// ================================================================
+
+
+
+
+
+
+
+
+
 // 3. Map Example
 console.log(`\n 3. Map Example`)
 
@@ -55,7 +71,7 @@ let map = new Map([
     ["age", 20]
 ]);
 
-// for...in ❌ doesn't work, Map is iterable but not an object
+// for...in  doesn't work, Map is iterable but not an object
 // for (let x in map) { } // Error
 
 console.log("for...of Map:");
@@ -64,14 +80,22 @@ for (let [key, value] of map) {
 }
 
 
-// ================================================================
+
+
+
+
+
+
+
+
+
 // 4. Set Example
 console.log(`\n 4. Set Example)`)
 
 
 let set = new Set([1, 2, 3]);
 
-// for...in ❌ doesn't work, Set is iterable but not an object
+// for...in  doesn't work, Set is iterable but not an object
 // for (let x in set) { } // Error
 
 console.log("for...of Set:");
@@ -80,7 +104,14 @@ for (let value of set) {
 }
 
 
-// ================================================================
+
+
+
+
+
+
+
+
 // 5. Key Points / Professional Notes
 console.log(`\n 5. Key Points / Professional Notes`)
 
