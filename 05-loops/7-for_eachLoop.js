@@ -2,7 +2,7 @@
 
 
 
-//JS for each loop notes 02/12/2026
+//JS for each loop notes 02/18/2026
 
 
 // forEach() is a HIGHER-ORDER array method
