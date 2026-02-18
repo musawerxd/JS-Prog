@@ -84,14 +84,17 @@ nums2.forEach((value, index, array) => {
 console.log(`\n 5. Modifying Original Array`)
 
 let nums3 = [1, 2, 3, 4, 5];
+
 console.log("Before Change: ")
 nums3.forEach((value) => {
     console.log("Values are :", value)
 })
+
 nums3.forEach((value, index, array) => {
     array[index] = value * 2;
 })
-console.log("Before Change: ")
+
+console.log("After Change: ")
 nums3.forEach((value) => {
     console.log("Values are :", value)
 })
@@ -158,6 +161,7 @@ matrix.forEach((row, index1) => {
 
 // 8. With Objects (Using Object.entries)
 console.log(`\n 8. With Objects (Using Object.entries)`)
+
 let obj = {
     user: "musawer",
     age: 19
@@ -181,8 +185,64 @@ Object.entries(obj).forEach(([key, value]) => {
 
 
 
-// 10. Important Deep Notes
 
+
+
+// 9. forEach with map
+console.log(`\n 9. forEach with map`)
+
+let map = new Map()
+map.set('IN', "India")
+map.set('Pk', "Pakistan")
+console.log(map)
+
+map.forEach((val) => {
+    console.log(val);
+})
+
+map.forEach((val, key) => {
+    console.log(key, " : ", val);
+})
+
+// Important:
+// Map callback parameters are (value, key)
+// Array callback parameters are (value, index)
+
+
+
+
+
+
+// 10. Most Common (object inside arrays )
+console.log(`\n 10. Most Common (object inside arrays )`);
+
+let arr = [
+    {
+        languageName: "JavaScript",
+        languageFileName: "js"
+    },
+    {
+        languageName: "C++",
+        languageFileName: "cpp"
+    },
+    {
+        languageName: "Python",
+        languageFileName: "py"
+    }
+]
+
+arr.forEach((item) => {
+    console.log(item.languageName, " : ", item.languageFileName);
+})
+
+
+
+
+
+
+
+// 11. Important
+console.log(`\n 11.Important`)
 
 
 // - Cannot break or stop early
