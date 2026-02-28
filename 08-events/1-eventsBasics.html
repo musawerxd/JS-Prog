@@ -291,3 +291,175 @@
     // stopPropagation() → stops bubbling
     // event delegation → best practice
 </script>
+
+
+
+
+<script>
+
+    // ======================================================
+    // 11. true vs false in addEventListener (Event Phases)
+    // ======================================================
+    //
+    // Syntax:
+    // element.addEventListener(type, callback, useCapture)
+    //
+    // useCapture can be:
+    // false → Bubbling phase (DEFAULT)
+    // true → Capturing phase
+    //
+    // This controls WHEN your listener executes in event flow.
+    //
+    // ======================================================
+    // Internal Event Flow (VERY IMPORTANT)
+    // ======================================================
+    //
+    // When event happens, browser executes in 3 phases:
+    //
+    // 1. Capturing phase → top → down
+    // 2. Target phase → actual element
+    // 3. Bubbling phase → bottom → up
+    //
+    // DOM Tree example:
+    //
+    // document
+    // └── body
+    // └── ul
+    // └── li
+    // └── img ← clicked
+    //
+    // Flow order:
+    //
+    // CAPTURE:
+    // document → body → ul → li → img
+    //
+    // TARGET:
+    // img
+    //
+    // BUBBLE:
+    // img → li → ul → body → document
+    //
+    // ======================================================
+    // Example 1: Bubbling phase (false - default)
+    // ======================================================
+
+    ul.addEventListener("click", () => {
+        console.log("UL bubbling");
+    }, false);
+
+    owl.addEventListener("click", () => {
+        console.log("OWL clicked");
+    });
+
+    // When owl clicked:
+    // OUTPUT:
+    // OWL clicked
+    // UL bubbling
+    //
+    // Explanation:
+    // Event runs on target first, then bubbles upward.
+    //
+    // false = listen during bubbling phase.
+
+
+
+    // ======================================================
+    // Example 2: Capturing phase (true)
+    // ======================================================
+
+    ul.addEventListener("click", () => {
+        console.log("UL capturing");
+    }, true);
+
+    owl.addEventListener("click", () => {
+        console.log("OWL clicked");
+    });
+
+    // When owl clicked:
+    // OUTPUT:
+    // UL capturing
+    // OWL clicked
+    //
+    // Explanation:
+    // Event runs on parent first, then target.
+    //
+    // true = listen during capturing phase.
+
+
+
+    // ======================================================
+    // Visual Execution Timeline
+    // ======================================================
+    //
+    // addEventListener(..., true)
+    //
+    // document
+    // ↓
+    // body
+    // ↓
+    // ul ← executes here first
+    // ↓
+    // owl ← target executes
+    //
+    // addEventListener(..., false)
+    //
+    // owl ← executes first
+    // ↑
+    // ul ← executes second
+    // ↑
+    // body
+    // ↑
+    // document
+
+
+
+    // ======================================================
+    // Professional Reality (IMPORTANT)
+    // ======================================================
+    //
+    // 99% of real-world code uses:
+    //
+    // false
+    //
+    // Because bubbling is more useful for:
+    //
+    // - event delegation
+    // - performance
+    // - predictable behavior
+    //
+    // Capturing is used only in special cases like:
+    //
+    // - intercepting events early
+    // - global event monitoring
+    // - security logic
+
+
+
+    // ======================================================
+    // Modern Professional Syntax (Recommended)
+    // ======================================================
+    //
+    // Instead of true/false, use options object:
+
+    ul.addEventListener("click", () => {
+        console.log("UL capturing");
+    }, { capture: true });
+
+    ul.addEventListener("click", () => {
+        console.log("UL bubbling");
+    }, { capture: false });
+
+
+    //
+    // This is clearer and professional.
+    //
+    // Other options available:
+    //
+    // {
+    // capture: true,
+    // once: true,
+    // passive: true
+    // }
+
+
+</script>
