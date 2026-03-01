@@ -16,6 +16,10 @@
             width: 100vw;
             font-size: xx-large;
         }
+
+        div:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -38,3 +42,393 @@
     let box = document.getElementById("box")
 
 </script>
+
+
+
+
+<!-- ====================================================== -->
+<!-- 1. Mouse Events -->
+<!-- ====================================================== -->
+
+
+<!-- Mouse events are triggered by mouse interaction. -->
+<!-- Internal flow: -->
+<!-- Hardware input → OS → Browser → Event object → JS listener executes -->
+
+<script>
+
+    // //click
+    // box.addEventListener("click", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //dblclick
+    // box.addEventListener("dblclick", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //mousedown
+    // box.addEventListener("mousedown", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //mouseup
+    // box.addEventListener("mouseup", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //mouseenter
+    // box.addEventListener("mouseenter", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //mouseleave
+    // box.addEventListener("mouseleave", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //mousemove
+    // box.addEventListener("mousemove", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //mouseover
+    // box.addEventListener("mouseover", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //mouseout
+    // box.addEventListener("mouseout", (event) => {
+    //     console.log(event.type);
+    // })
+
+    //right click
+    // box.addEventListener("contextmenu", (event) => {
+    //     console.log(event.type, "also known as right click");
+    // })
+</script>
+
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- 2. Keyboard Events -->
+<!-- ====================================================== -->
+
+<!-- Keyboard events only work when element is focusable. -->
+
+<script>
+    // Make element focusable: using tab key
+    box.setAttribute("tabindex", "0");
+
+    // //any key to be pressed ,when down
+    // box.addEventListener("keydown", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //any key to be pressed, when left
+    // box.addEventListener("keyup", (event) => {
+    //     console.log(event.type);
+    // })
+
+    //any key to be pressed, when down and left fully
+    // box.addEventListener("keypress", (event) => {
+    //     console.log(event.type);
+    // })
+
+
+</script>
+
+
+
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- 3. Focus Events -->
+<!-- ====================================================== -->
+
+<script>
+    // Triggered when element gains or loses focus.
+
+    // //when foucs is gain
+    // box.addEventListener("focus", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // // when focus losses
+    // box.addEventListener("blur", (event) => {
+    //     console.log(event.type);
+    // })
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- 4. Clipboard Events -->
+<!-- ====================================================== -->
+
+<script>
+
+    // //when copied
+    // box.addEventListener("copy", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //when cut
+    // box.addEventListener("cut", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //when paste
+    // box.addEventListener("paste", (event) => {
+    //     console.log(event.type);
+    // })
+
+</script>
+
+
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- 5. Drag Events -->
+<!-- ====================================================== -->
+<script>
+    // Drag events require draggable attribute.
+
+    box.setAttribute("draggable", "true");
+
+    // //dragstart
+    // box.addEventListener("dragstart", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //dragend
+    // box.addEventListener("dragend", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //drag (until its in the air, keep getting events)
+    // box.addEventListener("drag", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //dragover
+    // box.addEventListener("dragover", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //dragenter
+    // box.addEventListener("dragenter", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //dragleave
+    // box.addEventListener("dragleave", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //drop
+    // box.addEventListener("drop", (event) => {
+    //     console.log(event.type);
+    // })
+
+</script>
+
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- 6. Pointer Events (Modern Unified Events) -->
+<!-- ====================================================== -->
+
+<script>
+    // Pointer events replace mouse + touch + pen with unified system.
+
+    // //pinterup
+    // box.addEventListener("pointerup", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //pinterdown
+    // box.addEventListener("pointerdown", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //pointermove (hover over)
+    // box.addEventListener("pointermove", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //pointerenter
+    // box.addEventListener("pointerenter", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //pointerleave
+    // box.addEventListener("pointerleave", (event) => {
+    //     console.log(event.type);
+    // })
+</script>
+
+
+<!-- ====================================================== -->
+<!-- 7. Wheel Event -->
+<!-- ====================================================== -->
+
+<script>
+    // Triggered when mouse wheel scrolls.
+
+    box.addEventListener("wheel", (event) => {
+        console.log(event.type);
+    })
+</script>
+
+
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- 8. Window Events -->
+<!-- ====================================================== -->
+
+<script>
+    // Triggered on browser window.
+
+    // //onload
+    // window.addEventListener("load", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //resize
+    // window.addEventListener("resize", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //scroll
+    // window.addEventListener("scroll", (event) => {
+    //     console.log(event.type);
+    // })
+
+    // //beforeunload
+    // window.addEventListener("beforeunload", (event) => {
+    //     console.log(event.type);
+    // })
+</script>
+
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- 9. Event Capture vs Bubble -->
+<!-- ====================================================== -->
+
+<script>
+    // Third parameter controls capture phase.
+
+    // // element -> parent
+    // box.addEventListener("click", () => {
+    //     console.log("bubble phase listener");
+    // }, false);
+
+    // // parent-- > element
+    // box.addEventListener("click", () => {
+    //     console.log("capture phase listener");
+    // }, true);
+</script>
+
+
+
+
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- 10. Event Object Deep Inspection -->
+<!-- ====================================================== -->
+
+<script>
+
+    box.addEventListener("click", (event) => {
+
+        console.log("Event Object:", event);
+
+        console.log("type:", event.type);
+
+        console.log("target:", event.target);
+
+        console.log("currentTarget:", event.currentTarget);
+
+        console.log("timeStamp:", event.timeStamp);
+
+        console.log("clientX:", event.clientX);
+
+        console.log("clientY:", event.clientY);
+
+    });
+</script>
+
+
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- Important   -->
+<!-- ====================================================== -->
+
+
+
+
+<!-- Major Event Categories: -->
+
+<!-- Mouse Events -->
+<!-- Keyboard Events -->
+<!-- Focus Events -->
+<!-- Clipboard Events -->
+<!-- Drag Events -->
+<!-- Pointer Events -->
+<!-- Wheel Events -->
+<!-- Window Events -->
+
+<!-- Internal Execution: -->
+
+<!-- User action -->
+<!-- → Browser creates Event object -->
+<!-- → Event enters Event Queue -->
+<!-- → Event Loop processes -->
+<!-- → Listener executes -->
+
+<!-- Modern Professional Recommendation: -->
+
+<!-- Use Pointer Events instead of Mouse Events when possible. -->
+<!--  -->
+<!-- Pointer Events support: -->
+
+<!-- mouse -->
+<!-- touch -->
+<!-- stylus -->
