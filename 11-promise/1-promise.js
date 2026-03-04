@@ -57,7 +57,7 @@
 
 
 // ======================================================
-// 2. Consuming a Promise (.then, .catch)
+// 2. Consuming a Promise (.then, .catch, .finally)
 // ======================================================
 
 // console.log("Start");
@@ -69,23 +69,34 @@
 //     .catch(function (err) {
 //         console.log("Errors :", err);
 //     })
+//     .finally(function () {
+//         console.log("Cleanup / Always runs");
+//     });
 
 // console.log("End");
 
-//Promise Is Asynchronous
+// Promise Is Asynchronous
 // Start
 // End
 // Promise Stuff
+// Cleanup / Always runs
 
 // Execution Flow:
 // 1. Promise created → executor runs
-// 2. resolve() called
-// 3. .then callback queued in microtask queue
-// 4. Runs after current call stack completes
-//
+// 2. resolve() or reject() called
+// 3. .then / .catch callbacks queued in microtask queue
+// 4. After promise settles → .finally() queued
+// 5. All handlers run after current call stack completes
+
 // Important:
 // .then() handles fulfilled
 // .catch() handles rejected
+// .finally() runs regardless of result
+// - Does NOT receive value or error
+// - Used for cleanup logic
+// - Returns a NEW promise
+
+
 
 
 
