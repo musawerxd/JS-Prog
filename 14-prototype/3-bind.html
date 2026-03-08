@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+    <style>
+        html {
+            background-color: #212121;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            height: 100vh;
+        }
+
+        button {
+            padding: 10px 30px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="button">Button</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        // bind() is a method of Function.prototype.
+        // It creates a NEW function where the value of "this"
+        // is permanently set (bound).
+
+        // Unlike call() and apply(), bind() DOES NOT execute
+        // the function immediately.
+
+        // Instead it returns a new function that can be called later.
+
+        // const newFunction = orignalFunction(thisArgs, arg1, arg2,...)
+
+        // thisArg → the object that should become "this"
+        // arg1,arg2 → optional arguments (partial application)
+
+
+
+
+
+
+
+        // ======================================================
+        // 1. Basic Example
+        // ======================================================
+
+        function greet(name) {
+            console.log(`Hi, ${this.name}`);
+        }
+
+        const user = {
+            name: "Musawer"
+        }
+
+        const userGreet = greet.bind(user)
+
+        userGreet()
+
+        // Explanation:
+        //
+        // greet.bind(user)
+        //
+        // Creates a new function where:
+        // this → user
+        //
+        // greetUser() executes:
+        //
+        // greet.call(user)
+
+
+
+
+
+        // ======================================================
+        // 2. Why bind() is Needed
+        // ======================================================
+
+        // In JavaScript, the value of "this" depends on
+        // HOW the function is called.
+
+        //Example
+
+        const Person = {
+            name: "Ali",
+            age: 23,
+            sayHello: function () {
+                console.log(`Hello, my name is ${this.name}`);
+            }
+        }
+
+        const fn = Person.sayHello;
+        fn();
+
+        // Output:
+        //
+        // Hello, my name is  undefined
+        //
+        // Explanation:
+        //
+        // fn() is called without object context
+        // so "this" becomes global (window or undefined).
+
+        // Fix using bind()
+
+        const fixedFunction = Person.sayHello.bind(Person)
+        fixedFunction()
+        // Now "this" correctly refers to person.
+
+
+
+
+
+
+
+
+
+        // ======================================================
+        // 3. bind() with Arguments
+        // ======================================================
+
+        // bind() can pre-set arguments.
+
+        function multiple(a, b) {
+            return a * b;
+        }
+
+        const double = multiple.bind(null, 2);
+
+        console.log(double(5));
+
+
+        //Internally : 
+        // const double = function (b) {
+        //     return multiply(2, b);
+        // }
+        // Explanation:
+        //
+        // multiply.bind(null, 2)
+        //
+        // fixes first argument = 2
+        //
+        // double(5)
+        //
+        // internally runs:
+        //
+        // multiply(2,5)
+
+        // This concept is called:
+        //
+        // PARTIAL APPLICATION
+
+
+
+
+
+
+
+
+
+
+
+        // ======================================================
+        // 4. bind() with Object Methods
+        // ======================================================
+
+        const Student = {
+            name: "Musawer",
+            age: 20,
+            introduce: function () {
+                console.log(`Hi , i am ${this.name}`);
+            }
+        }
+
+        const intro = Student.introduce.bind(Student)
+        intro();
+
+        // Explanation:
+        //
+        // introduce normally depends on student object.
+        // bind() permanently attaches the object.
+
+
+
+
+
+
+
+
+        // ======================================================
+        // 5. bind() in Event Listeners
+        // ======================================================
+
+
+        const handler = {
+            message: "Button clicked",
+            handleClick() {
+                console.log(`${this.message}`);
+            }
+        }
+
+        document
+            .getElementById("button")
+            .addEventListener("click", handler.handleClick.bind(handler))
+
+        // Explanation:
+        //
+        // Without bind:
+        // this → button element
+        //
+        // With bind:
+        // this → handler object
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // ======================================================
+        // 6. bind() with Constructor Functions
+        // ======================================================
+
+        function person(name) {
+            this.name = name;
+        }
+
+        const createPerson = person.bind(null);
+
+        const p1 = new createPerson("Ali")
+        console.log(p1);
+
+        // Explanation:
+        //
+        // bind() can be used with constructors
+        // to preset parameters or contexts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // ======================================================
+        // 7. bind() vs call() vs apply()
+        // ======================================================
+        //
+        // call()
+        // ------
+        // Executes function immediately
+        // arguments passed individually
+        //
+        // apply()
+        // -------
+        // Executes function immediately
+        // arguments passed as array
+        //
+        // bind()
+        // ------
+        // DOES NOT execute immediately
+        // returns new function
+        // binds "this" permanently
+
+
+
+
+
+
+        // Example:
+
+        function show(age) {
+            console.log(this.name, age);
+        }
+
+        const obj = { name: "John" };
+
+        show.call(obj, 25);
+        show.apply(obj, [25]);
+
+        const bound = show.bind(obj);
+        bound(25);
+
+
+
+    </script>
+</body>
+
+</html>
