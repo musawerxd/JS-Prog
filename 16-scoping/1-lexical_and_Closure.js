@@ -259,7 +259,6 @@
 
 function memoize(fn) {
     const cache = {};
-
     return function (n) {
         if (cache[n]) {
             return cache[n]
@@ -271,6 +270,19 @@ function memoize(fn) {
 
 }
 
+function square(n) {
+    console.log("calculating...");
+    return n * n;
+}
+
+const fastSquare = memoize(square);
+
+console.log(fastSquare(3))
+//first time calculating
+//then retrieving from cache
+console.log(fastSquare(3))
+console.log(fastSquare(3))
+// console.log(fastSquare)
 
 
 
